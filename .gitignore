@@ -1,0 +1,87 @@
+## .NET Core/Standard specific
+bin/
+obj/
+Debug/
+Release/
+*.dll
+*.exe
+*.pdb
+*.user
+*.suo
+*.cache
+*.log
+*.vs
+.vs/
+_ReSharper*/
+*.ReSharper*
+*.DotSettings.user
+**/packages/*
+*.nupkg
+.paket/paket.exe
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio files
+*.userprefs
+*.usertasks
+*.sln.docstates
+.vscode/
+*.code-workspace
+
+## .NET Scaffolding
+ScaffoldingReadMe.txt
+
+## NuGet Packages Directory
+packages/
+
+## macOS specific 
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Unit test reports
+TestResults/
+
+## Database files
+*.mdf
+*.ldf
+*.ndf
+
+## SSDT schema compare
+*.scmp
+
+## Rider specific
+.idea/
+*.sln.iml
+
+## Cake build
+tools/*
+!tools/packages.config
+
+## SonarQube
+.sonarqube/
