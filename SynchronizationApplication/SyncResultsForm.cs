@@ -29,6 +29,9 @@ namespace SynchronizationApplication
 
         private void PopulateUI()
         {
+            string entityName = _result.EntityType == EntityType.Customer ? "Customer" : "User";
+            this.Text = $"{entityName} Synchronization Results";
+
             lblTotalRecords.Text = $"Total Records: {_result.TotalRecords}";
             lblProcessedRecords.Text = $"Processed Records: {_result.ProcessedRecords}";
             lblAddedRecords.Text = $"Added Records: {_result.AddedRecords}";
@@ -53,18 +56,18 @@ namespace SynchronizationApplication
             {
                 if (_result.ProcessedRecords == _result.TotalRecords)
                 {
-                    lblSummary.Text = "All records were successfully synchronized.";
+                    lblSummary.Text = $"All {entityName.ToLower()} records were successfully synchronized.";
                     picResult.Image = SystemIcons.Information.ToBitmap();
                 }
                 else
                 {
-                    lblSummary.Text = "Synchronization completed with warnings.";
+                    lblSummary.Text = $"{entityName} synchronization completed with warnings.";
                     picResult.Image = SystemIcons.Warning.ToBitmap();
                 }
             }
             else
             {
-                lblSummary.Text = "Synchronization completed with errors.";
+                lblSummary.Text = $"{entityName} synchronization completed with errors.";
                 picResult.Image = SystemIcons.Error.ToBitmap();
             }
         }
@@ -80,7 +83,7 @@ namespace SynchronizationApplication
             {
                 Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*",
                 DefaultExt = "txt",
-                FileName = $"Sync_Log_{DateTime.Now:yyyyMMdd_HHmmss}"
+                FileName = $"{_result.EntityType}_Sync_Log_{DateTime.Now:yyyyMMdd_HHmmss}"
             };
 
             if (saveDialog.ShowDialog() == DialogResult.OK)
@@ -97,7 +100,4 @@ namespace SynchronizationApplication
             }
         }
     }
-
-
-
 }
